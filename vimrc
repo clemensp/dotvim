@@ -96,7 +96,9 @@ function! StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
   setlocal listchars=tab:\ \ 
 endfunction
-
+" Press ? for help             |  1 require 'spec_helper'
+                               |  2
+.
 nmap <C-e> :call StartTerm()<CR>
 " ctrl-r send to console
 vmap <c-r> <f9> 
