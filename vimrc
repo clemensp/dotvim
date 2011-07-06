@@ -2,6 +2,9 @@
 "                                                        pre setup "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" enable full vim mode
+set nocompatible
+
 "pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -10,7 +13,6 @@ call pathogen#helptags()
 "                                                         setup    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible                               " enable full vim mode
 set showcmd                                    " show commands in the lower right hand corner
 set backupdir=~/.vim/backup                    " save backups to .vim/backup
 set directory=~/.vim/backup                    " save .swp files to .vim/backup
@@ -53,6 +55,20 @@ set guioptions-=LlRrb
 "                                                         plugins  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" fugitive
+
+"spell check when writing commit logs
+autocmd filetype svn,*commit* setlocal spell
+
+" fugitive buffers when we
+" leave them - otherwise the buffer list gets poluted
+" add a mapping on .. to view parent tree
+autocmd BufReadPost fugitive://* set bufhidden=delete
+autocmd BufReadPost fugitive://*
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+
 
 " CTags
 nmap <C-F5> :!ctags --extra=+f -R *<CR><CR>
@@ -87,8 +103,7 @@ vmap <c-r> <f9>
 
 " ctrl-space to toggle comments
 nmap <c-space> ,c<space>
-vmap <c-space> ,c<space>
-imap <c-space> <Esc>,c<space>
+au VimEnter * vmap <c-space> ,c<space>
 
 "ctrl-b for bufexplorer
 nmap <c-b> ,be
@@ -104,88 +119,104 @@ nmap <Leader>p :Hammer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         keymaps  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:MapKeys()
+  "c-backspace
+  imap <C-BS> <C-W>
+  cmap <C-BS> <C-W>
 
-"c-backspace
-imap <C-BS> <C-W>
-cmap <C-BS> <C-W>
+  "map \ to :
+  nmap \ :
 
-"run test
-" nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
-" nmap <silent> ,rl :!gnome-terminal --geometry 110x60 -e "tail -f /tmp/testlog"<cr>
-" nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
-nmap ,rt :VimShellExecute ruby <c-r>%<cr>
+  "run test
+  " nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
+  " nmap <silent> ,rl :!gnome-terminal --geometry 110x60 -e "tail -f /tmp/testlog"<cr>
+  " nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
+  " nmap ,rt :VimShellExecute ruby <c-r>%<cr>
 
-"migrate
-nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
+  "migrate
+  nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
 
-"tabs
-nmap H :tabp<cr>
-nmap L :tabn<cr>
-nmap <c-t> :tabe .<cr>
+  "tabs
+  nmap H :tabp<cr>
+  nmap L :tabn<cr>
+  nmap <c-t> :tabe .<cr>
 
-"navigate by paragraph or by word
-nmap <c-j> }
-nmap <c-k> {
-nmap <c-h> b
-nmap <c-l> e
+  "navigate by paragraph or by word
+  nmap <c-j> }
+  nmap <c-k> {
+  nmap <c-h> b
+  nmap <c-l> e
 
-"select all
-nmap <silent> <c-a> GVgg
+  "select all
+  nmap <silent> <c-a> GVgg
 
-" E edits from the local dir
-nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
+  " E edits from the local dir
+  nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
 
-"new line, but stay in command mode
-nmap <c-return> o<esc>k
+  "new line, but stay in command mode
+  nmap <c-return> o<esc>k
 
-"visual replace
-vmap <silent> r "_dP
+  "visual replace
+  vmap <silent> r "_dP
 
-"reload ctags
-nmap <c-f5> :!ctags -R .<cr>
+  "reload ctags
+  nmap <c-f5> :!ctags -R .<cr>
 
-"toggle search highlighting
-nmap <f2> :set hls!<cr>
+  "toggle search highlighting
+  nmap <f2> :set hls!<cr>
 
-"reload .vimrc
-nmap <f12> :source ~/.vimrc<cr>
+  "reload .vimrc
+  nmap <f12> :source ~/.vimrc<cr>
 
-"open .vimrc
-nmap <f11> :e ~/.vimrc<cr>
+  "open .vimrc
+  nmap <f11> :e ~/.vimrc<cr>
 
-"toggle spellcheck
-nmap <f4> :set spell!<cr>
+  "toggle spellcheck
+  nmap <f4> :set spell!<cr>
 
-"duplicate line
-nmap <silent> <c-d> mr0Dpyyp`r
+  "duplicate line
+  nmap <silent> <c-d> mr0Dpyyp`r
 
-"jump to front of line
-nmap <silent> <c-i> I<esc>
+  "jump to front of line
+  nmap <silent> <c-i> I<esc>
 
-"system copy/paste
-vmap <A-y> "+y
-nmap <A-p> "+p
-imap <A-p> <c-o><c-p>
+  " why isn't it this by default??
+  nnoremap <s-y> y$
 
-"cycle active split
-nmap <c-j> <c-w><c-w>
+  "resize window
+  nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+  nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" why isn't it this by default??
-nnoremap <s-y> y$
+  " kill all buffers
+  nmap <c-q> :bufdo bd
 
-"resize window
-nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
+  " ,so to source current file
+  nmap <Leader>so :so %<cr>
 
-" kill all buffers
-nmap <c-q> :bufdo bd
+  " dont know why I need to do this
+  vnoremap <esc> <esc>
+endfunction
+autocmd VimEnter * call s:MapKeys()
 
-" ,so to source current file
-nmap <Leader>so :so %<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                       OS         "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! s:OsCheck()
 
-" dont know why I need to do this
-vnoremap <esc> <esc>
+  "cycle active split
+  nmap <d-j> <c-w><c-w>
 
+
+  " cycle active split
+  " nmap <a-j> <c-w><c-w>
+
+  " system copy/paste
+  " vmap <a-c> +y
+  " nmap <a-v> +p
+  " nmap <a-x> +d
+  " imap <a-p> <c-o><a-v>
+endfunction
+autocmd VimEnter * call s:OsCheck()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                ruby debugging    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -245,3 +276,4 @@ function! s:setupMarkup()
   call s:setupWrapping()
   set ft=markdown
 endfunction
+
