@@ -119,104 +119,99 @@ nmap <Leader>p :Hammer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         keymaps  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! s:MapKeys()
-  "c-backspace
-  imap <C-BS> <C-W>
-  cmap <C-BS> <C-W>
+"c-backspace
+imap <C-BS> <C-W>
+cmap <C-BS> <C-W>
 
-  "map \ to :
-  nmap \ :
+"map \ to :
+nmap \ :
 
-  "run test
-  " nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
-  " nmap <silent> ,rl :!gnome-terminal --geometry 110x60 -e "tail -f /tmp/testlog"<cr>
-  " nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
-  " nmap ,rt :VimShellExecute ruby <c-r>%<cr>
+"run test
+nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
+nmap ,rl :silent execute "!gnome-terminal --geometry 110x60 -e 'tail -f /tmp/testlog'"<cr>
+" nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
+" nmap ,rt :VimShellExecute ruby <c-r>%<cr>
 
-  "migrate
-  nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
+"migrate
+nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
 
-  "tabs
-  nmap H :tabp<cr>
-  nmap L :tabn<cr>
-  nmap <c-t> :tabe .<cr>
+"tabs
+nmap H :tabp<cr>
+nmap L :tabn<cr>
+nmap <c-t> :tabe .<cr>
 
-  "navigate by paragraph or by word
-  nmap <c-j> }
-  nmap <c-k> {
-  nmap <c-h> b
-  nmap <c-l> e
+"navigate by paragraph or by word
+nmap <c-j> }
+nmap <c-k> {
+nmap <c-h> b
+nmap <c-l> e
 
-  "select all
-  nmap <silent> <c-a> GVgg
+"select all
+nmap <silent> <c-a> GVgg
 
-  " E edits from the local dir
-  nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
+" E edits from the local dir
+nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
 
-  "new line, but stay in command mode
-  nmap <c-return> o<esc>k
+"new line, but stay in command mode
+nmap <c-return> o<esc>k
 
-  "visual replace
-  vmap <silent> r "_dP
+"visual replace
+vmap <silent> r "_dP
 
-  "reload ctags
-  nmap <c-f5> :!ctags -R .<cr>
+"reload ctags
+nmap <c-f5> :!ctags -R .<cr>
 
-  "toggle search highlighting
-  nmap <f2> :set hls!<cr>
+"toggle search highlighting
+nmap <f2> :set hls!<cr>
 
-  "reload .vimrc
-  nmap <f12> :source ~/.vimrc<cr>
+"reload .vimrc
+nmap <f12> :source ~/.vimrc<cr>
 
-  "open .vimrc
-  nmap <f11> :e ~/.vimrc<cr>
+"open .vimrc
+nmap <f11> :e ~/.vimrc<cr>
 
-  "toggle spellcheck
-  nmap <f4> :set spell!<cr>
+"toggle spellcheck
+nmap <f4> :set spell!<cr>
 
-  "duplicate line
-  nmap <silent> <c-d> mr0Dpyyp`r
+"duplicate line
+nmap <silent> <c-d> mr0Dpyyp`r
 
-  "jump to front of line
-  nmap <silent> <c-i> I<esc>
+"jump to front of line
+nmap <silent> <c-i> I<esc>
 
-  " why isn't it this by default??
-  nnoremap <s-y> y$
+" why isn't it this by default??
+nnoremap <s-y> y$
 
-  "resize window
-  nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
-  nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
+"resize window
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 
-  " kill all buffers
-  nmap <c-q> :bufdo bd
+" kill all buffers
+nmap <c-q> :bufdo bd
 
-  " ,so to source current file
-  nmap <Leader>so :so %<cr>
+" ,so to source current file
+nmap <Leader>so :so %<cr>
 
-  " dont know why I need to do this
-  vnoremap <esc> <esc>
-endfunction
-autocmd VimEnter * call s:MapKeys()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                       OS         "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! s:OsCheck()
 
-  "cycle active split
-  nmap <d-j> <c-w><c-w>
+" OSX<----------------------------------
+"cycle active split
+" nmap <d-j> <c-w><c-w>
 
 
-  " cycle active split
-  " nmap <a-j> <c-w><c-w>
+" linux<----------------------------------
+" cycle active split
+nmap <a-j> <c-w><c-w>
 
-  " system copy/paste
-  " vmap <a-c> +y
-  " nmap <a-v> +p
-  " nmap <a-x> +d
-  " imap <a-p> <c-o><a-v>
-endfunction
-autocmd VimEnter * call s:OsCheck()
+" system copy/paste
+vmap <a-c> +y
+nmap <a-v> +p
+nmap <a-x> +d
+imap <a-p> <c-o><a-v>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                ruby debugging    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -276,4 +271,3 @@ function! s:setupMarkup()
   call s:setupWrapping()
   set ft=markdown
 endfunction
-
