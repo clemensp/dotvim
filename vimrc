@@ -123,17 +123,15 @@ nmap <Leader>p :Hammer<CR>
 imap <C-BS> <C-W>
 cmap <C-BS> <C-W>
 
-"map \ to :
-nmap \ :
+"map \ to q:
+nmap \ q:i
 
 "run test
 nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
-nmap ,rl :silent execute "!gnome-terminal --geometry 110x60 -e 'tail -f /tmp/testlog'"<cr>
+nmap ,rs :silent execute "!rspec --color % &> /tmp/testlog &"<cr>
+nmap ,rl :silent execute "!gnome-terminal --geometry 110x60 -e 'tail -f /tmp/testlog' &"<cr>
 " nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
 " nmap ,rt :VimShellExecute ruby <c-r>%<cr>
-
-"migrate
-nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
 
 "tabs
 nmap H :tabp<cr>
@@ -160,6 +158,9 @@ vmap <silent> r "_dP
 
 "reload ctags
 nmap <c-f5> :!ctags -R .<cr>
+
+"ctrl-tab toggles last file
+nmap <c-tab> <c-6>
 
 "toggle search highlighting
 nmap <f2> :set hls!<cr>
@@ -191,6 +192,9 @@ nmap <c-q> :bufdo bd
 
 " ,so to source current file
 nmap <Leader>so :so %<cr>
+
+" c-; goes back a jump
+nnoremap <c-;> ,
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
