@@ -124,10 +124,10 @@ nmap L :tabn<cr>
 nmap <c-t> :tabe .<cr>
 
 "navigate by paragraph or by word
-nmap <a-j> }
-nmap <a-k> {
-nmap <a-h> b
-nmap <a-l> e
+nmap <c-j> }
+nmap <c-k> {
+nmap <c-h> b
+nmap <c-l> e
 
 "select all
 nmap <silent> <c-a> GVgg
@@ -146,7 +146,6 @@ nmap <c-f5> :!ctags -R .<cr>
 
 "toggle search highlighting
 nmap <f2> :set hls!<cr>
-
 
 "reload .vimrc
 nmap <f12> :source ~/.vimrc<cr>
@@ -168,15 +167,8 @@ vmap <A-y> "+y
 nmap <A-p> "+p
 imap <A-p> <c-o><c-p>
 
-"windows
-nmap <c-j> <c-w>j
-nmap <c-h> <c-w>h
-nmap <c-k> <c-w>k
-nmap <c-l> <c-w>l
-imap <c-j> <esc><c-w>j
-imap <c-h> <esc><c-w>h
-imap <c-k> <esc><c-w>k
-imap <c-l> <esc><c-w>l
+"cycle active split
+nmap <c-j> <c-w><c-w>
 
 " why isn't it this by default??
 nnoremap <s-y> y$
