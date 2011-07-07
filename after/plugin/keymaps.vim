@@ -31,8 +31,6 @@ nmap <c-k> {
 nmap <c-h> b
 nmap <c-l> e
 
-"select all
-nmap <silent> <c-a> GVgg
 
 " E edits from the local dir
 nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -90,9 +88,9 @@ vnoremap <esc> <esc>
 nmap <d-j> <c-w><c-w>
 
 " linux<----------------------------------
-"jump to front/end of line
-" nmap <a-i> I<esc>
-" nmap <a-a> A<esc>
+
+"select all
+" nmap <silent> <a-a> GVgg
 
 " cycle active split
 " nmap <a-j> <c-w><c-w>

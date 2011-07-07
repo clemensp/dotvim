@@ -1,7 +1,21 @@
-namespace :setup do
-  task :plugins do
+namespace :plugin do
+
+  # rake plugin:add[foo,git@github.com:foo.git]
+  task :add, :name, :git do |t, args|
+    sh "git submodule add #{args[:git]} bundle/#{args[:name]}"
+    sh "git submodule init"
+    sh "git submodule update"
+    puts "\nsuccessfully installed #{args[:name]}"
+  end
+
+  task :setup do
     # hammer
     sh "gem install github-markup redcarpet RedCloth"
+
+    # vimproc
+    Dir.chdir "bundle/vimproc" do
+      sh "make -f make_gcc.mak"
+    end
 
     # command_t
     Dir.chdir "bundle/command-t/ruby/command-t" do
@@ -16,6 +30,7 @@ namespace :setup do
     end
   end
 end
+
 
 task :init do
   sh 'git submodule init && git submodule update'
