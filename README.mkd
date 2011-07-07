@@ -1,20 +1,22 @@
-    
-                                                                  ________ ++     ________
-                                                                 /VVVVVVVV\++++  /VVVVVVVV\
-                                                                 \VVVVVVVV/++++++\VVVVVVVV/
-                                                                  |VVVVVV|++++++++/VVVVV/'
-                                                                  |VVVVVV|++++++/VVVVV/'
-                                                                 +|VVVVVV|++++/VVVVV/'+
-                                                               +++|VVVVVV|++/VVVVV/'+++++
-                                                             +++++|VVVVVV|/VVVVV/'+++++++++
-                                                               +++|VVVVVVVVVVV/'+++++++++
-                                                                 +|VVVVVVVVV/'+++++++++
-                                                                  |VVVVVVV/'+++++++++
-                                                                  |VVVVV/'+++++++++
-                                                                  |VVV/'+++++++++
-                                                                  'V/'   ++++++
-                                                                           ++
-    
+
+
+
+                              ________ ++     ________
+                             /VVVVVVVV\++++  /VVVVVVVV\
+                             \VVVVVVVV/++++++\VVVVVVVV/
+                              |VVVVVV|++++++++/VVVVV/'
+                              |VVVVVV|++++++/VVVVV/'
+                             +|VVVVVV|++++/VVVVV/'+
+                           +++|VVVVVV|++/VVVVV/'+++++
+                         +++++|VVVVVV|/VVVVV/'+++++++++
+                           +++|VVVVVVVVVVV/'+++++++++
+                             +|VVVVVVVVV/'+++++++++
+                              |VVVVVVV/'+++++++++
+                              |VVVVV/'+++++++++
+                              |VVV/'+++++++++
+                              'V/'   ++++++
+                                       ++
+
 
 
 
@@ -22,6 +24,7 @@ My .vim folder
 ==============
 
 currently using:
+
 
  - abolish
  - ack.vim
@@ -80,21 +83,21 @@ Install
 Directory Structure
 -------------------
 
-*after*(/plugin/keymaps.vim): All custom key maps are in here, so that they get priority over plugins
-*autoload*: pathogen (plugin management system) is installed here
-*backup*: location for all vim temp files
-*bundle*: All plugins are installed here as git submodules
+ - *after*(/plugin/keymaps.vim): All custom key maps are in here, so that they get priority over plugins
+ - *autoload*: pathogen (plugin management system) is installed here
+ - *backup*: location for all vim temp files
+ - *bundle*: All plugins are installed here as git submodules
 
 vimrc
 -----
 
 vimrc is basically just a bootstrap file that will load each of the following files
 
-*settings.vim*: editor config
-*plugin-config*: keymaps and settings
-*autocmds.vim*: autocmds and a few functions
-*statusline.vim*: bunch of customizations for the modeline (lifted from scrooloose's vimrc)
-*keymaps.vim*: link to bundle/plugin/keymaps.vim for convenience
+ - *settings.vim*: editor config
+ - *plugin-config*: keymaps and settings
+ - *autocmds.vim*: autocmds and a few functions
+ - *statusline.vim*: bunch of customizations for the modeline (lifted from scrooloose's vimrc)
+ - *keymaps.vim*: link to bundle/plugin/keymaps.vim for convenience
 
 ProTips
 -------
