@@ -6,13 +6,13 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " configure vim settings
-source "settings.vim"
+source ~/.vim/settings.vim
 
 " configure plugins
-source "plugin-config.vim"
+source ~/.vim/plugin-config.vim
 
 " set up autocmds
-source "autocmds.vim"
+source ~/.vim/autocmds.vim
 
 " set up modeline
-source "statusline.vim"
+source ~/.vim/statusline.vim

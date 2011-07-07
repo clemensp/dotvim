@@ -1,6 +1,6 @@
 " quickfix nav
-nmap <d-left> :cp<cr>
-nmap <d-right> :cn<cr>
+nmap <a-left> :cp<cr>
+nmap <a-right> :cn<cr>
 
 " ctrl-space to toggle comment
 nmap <c-space> ,c<space>
@@ -79,26 +79,26 @@ nmap <Leader>so :so %<cr>
 nnoremap <c-;> ,
 
 " reclaiming some plugin mappings
-unmap \\
-unmap \/
 vnoremap <esc> <esc>
 
 " OSX<----------------------------------
 "cycle active split
-nmap <d-j> <c-w><c-w>
+" nmap <d-j> <c-w><c-w>
+" unmap \\
+" unmap \/
 
 " linux<----------------------------------
 
 "select all
-" nmap <silent> <a-a> GVgg
+nmap <silent> <a-a> GVgg
 
 " cycle active split
-" nmap <a-j> <c-w><c-w>
+nmap <a-j> <c-w><c-w>
 
 " system copy/paste
-" vmap <a-c> +y
-" nmap <a-v> +p
-" nmap <a-x> +d
-" imap <a-p> <c-o><a-v>
+vmap <a-c> +y
+nmap <a-v> +p
+nmap <a-x> +d
+imap <a-p> <c-o><a-v>
 
 " unmap ,w=
