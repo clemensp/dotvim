@@ -81,11 +81,13 @@ nnoremap <c-;> ,
 " reclaiming some plugin mappings
 vnoremap <esc> <esc>
 
+" kill some maps
+unmap \\
+unmap \/
+
 " OSX<----------------------------------
 "cycle active split
 " nmap <d-j> <c-w><c-w>
-" unmap \\
-" unmap \/
 
 " linux<----------------------------------
 
@@ -96,9 +98,9 @@ nmap <silent> <a-a> GVgg
 nmap <a-j> <c-w><c-w>
 
 " system copy/paste
-vmap <a-c> +y
-nmap <a-v> +p
-nmap <a-x> +d
+vmap <a-c> "+y
+nmap <a-v> "+p
+nmap <a-x> "+d
 imap <a-p> <c-o><a-v>
 
-" unmap ,w=
+unmap ,w=
