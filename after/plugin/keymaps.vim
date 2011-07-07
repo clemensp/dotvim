@@ -80,6 +80,10 @@ nmap <Leader>so :so %<cr>
 " c-; goes back a jump
 nnoremap <c-;> ,
 
+" reclaiming some plugin mappings
+unmap \\
+unmap \/
+vnoremap <esc> <esc>
 
 " OSX<----------------------------------
 "cycle active split
@@ -99,8 +103,4 @@ nmap <d-j> <c-w><c-w>
 " nmap <a-x> +d
 " imap <a-p> <c-o><a-v>
 
-" reclaiming some plugin mappings
-unmap \\
-unmap \/
-unmap ,w=
-vnoremap <esc> <esc>
+" unmap ,w=

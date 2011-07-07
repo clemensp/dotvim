@@ -19,5 +19,6 @@ end
 
 task :init do
   sh 'git submodule init && git submodule update'
+  sh 'mkdir backup'
   sh 'ln -s vimrc ../.vimrc'
 end
