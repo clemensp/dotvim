@@ -31,6 +31,11 @@ nmap <c-k> {
 nmap <c-h> b
 nmap <c-l> e
 
+"for Gdiff
+nmap <left> :diffget //3 | :diffupdate
+nmap <right> :diffget //2 | :diffupdate
+nmap <up> ]c
+nmap <down> [c
 
 " E edits from the local dir
 nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
