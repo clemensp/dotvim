@@ -85,22 +85,22 @@ vnoremap <esc> <esc>
 unmap \\
 unmap \/
 
-" OSX<----------------------------------
-"cycle active split
-" nmap <d-j> <c-w><c-w>
+if has("gui_macvim")
+  nmap <d-j> <c-w><c-w>
+endif
 
-" linux<----------------------------------
+if has("gui_gtk2")
+  " select all
+  nmap <silent> <a-a> GVgg
 
-"select all
-nmap <silent> <a-a> GVgg
+  " cycle active split
+  nmap <a-j> <c-w><c-w>
 
-" cycle active split
-nmap <a-j> <c-w><c-w>
+  " system copy/paste
+  vmap <a-c> "+y
+  nmap <a-v> "+p
+  nmap <a-x> "+d
+  imap <a-p> <c-o><a-v>
 
-" system copy/paste
-vmap <a-c> "+y
-nmap <a-v> "+p
-nmap <a-x> "+d
-imap <a-p> <c-o><a-v>
-
-unmap ,w=
+  unmap ,w=
+endif

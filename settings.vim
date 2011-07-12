@@ -32,6 +32,10 @@ let mapleader=','                              " leader
 let maplocalleader=',,'                        " localleader
 colorscheme blackboard                         " color
 
+if has("gui_macvim")
+  set guifont=Menlo:h14
+endif
+
 " this is to drop all scrollbars sort of a hacky way to do it
 set guioptions+=LlRrb
 set guioptions-=LlRrb
