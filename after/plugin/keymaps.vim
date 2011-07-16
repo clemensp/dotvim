@@ -20,6 +20,9 @@ nmap ,rl :silent execute "!gnome-terminal --geometry 110x60 -e 'tail -f /tmp/tes
 " nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
 " nmap ,rt :VimShellExecute ruby <c-r>%<cr>
 
+" Hit escape to clear a search
+:nnoremap <esc> :noh<return><esc>
+
 "tabs
 nmap H :tabp<cr>
 nmap L :tabn<cr>

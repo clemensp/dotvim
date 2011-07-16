@@ -16,3 +16,6 @@ source ~/.vim/autocmds.vim
 
 " set up modeline
 source ~/.vim/statusline.vim
+
+" auto highlight current word
+source ~/.vim/auto-highlight.vim
