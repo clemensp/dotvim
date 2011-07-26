@@ -9,14 +9,6 @@ namespace :plugin do
   end
 
   task :setup do
-    # hammer
-    sh "gem install github-markup redcarpet RedCloth"
-
-    # vimproc
-    Dir.chdir "bundle/vimproc" do
-      sh "make -f make_gcc.mak"
-    end
-
     # command_t
     Dir.chdir "bundle/command-t/ruby/command-t" do
       if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems

@@ -26,20 +26,11 @@ nmap <Leader>n :NERDTreeToggle<CR>
 
 " Command-t
 let g:CommandTMaxHeight=20
-nmap <silent> <a-t> :CommandT<cr>
-imap <silent> <a-t> <esc>:CommandT<cr>
-nmap <silent> <f5> :CommandTFlush<cr>
+map <Leader>f :CommandTFlush<CR>
 let g:CommandTMatchWindowAtTop = 1
 
 " ctrl-F for Ack
 nmap <C-F> :Ack<space>
-
-" ctrl-e for ConqueTerm
-function! StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
-endfunction
-nmap <C-e> :call StartTerm()<CR>
 
 "ctrl-b for bufexplorer
 nmap <c-b> ,be
@@ -48,6 +39,3 @@ imap <c-b> <esc>,be
 "syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
-
-",p for hammer
-nmap <Leader>p :Hammer<CR>

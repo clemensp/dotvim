@@ -1,15 +1,3 @@
-" ,tp to add .tap &method(:puts) to a line
-autocmd FileType ruby nmap <Leader>tp mpA.tap &method(:puts)<esc>`p
-
-" ,apc to puts the line and copy it
-autocmd FileType ruby nmap <Leader>apc mpyypkIap(<esc>A)<esc>`p3l
-
-" ,ap<space> to puts the line
-autocmd FileType ruby nmap <Leader>ap<space> mpIap(<esc>A)<esc>`p3l
-
-"debug message in ruby
-autocmd FileType ruby nmap <Leader>db op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<cr>p<space>'<esc>50i#'<esc>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         stuff    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

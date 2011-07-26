@@ -31,10 +31,18 @@ set confirm                         " confirm save when leaving unsaved buffers
 set foldlevelstart=99               " turn off default folding
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
-colorscheme blackboard              " color
 
-if has("gui_macvim")
-  set guifont=Menlo:h14
+set background=dark
+colorscheme solarized               " color
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=DejaVu\ Sans\ Mono\ 10
+  elseif has("gui_win32")
+    set guifont=Consolas:h11:cANSI
+  elseif has("gui_macvim")
+    set guifont=Menlo:h14
+  endif
 endif
 
 " this is to drop all scrollbars sort of a hacky way to do it
