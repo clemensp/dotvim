@@ -25,9 +25,3 @@ nmap <silent> <c-d> mr0Dpyyp`r
 
 " reclaiming some plugin mappings
 vnoremap <esc> <esc>
-
-if has("gui_macvim")
-endif
-
-if has("gui_gtk2")
-endif

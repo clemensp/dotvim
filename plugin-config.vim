@@ -27,14 +27,6 @@ nmap <Leader>n :NERDTreeToggle<CR>
 " Command-t
 let g:CommandTMaxHeight=20
 map <Leader>f :CommandTFlush<CR>
-let g:CommandTMatchWindowAtTop = 1
-
-" ctrl-F for Ack
-nmap <C-F> :Ack<space>
-
-"ctrl-b for bufexplorer
-nmap <c-b> ,be
-imap <c-b> <esc>,be
 
 "syntastic
 let g:syntastic_enable_signs=1

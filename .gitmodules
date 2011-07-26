@@ -160,3 +160,6 @@
 [submodule "bundle/speed-dating"]
 	path = bundle/speed-dating
 	url = https://github.com/tpope/vim-speeddating.git
+[submodule "bundle/tcomment"]
+	path = bundle/tcomment
+	url = git://github.com/vim-scripts/tComment.git
