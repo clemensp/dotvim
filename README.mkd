@@ -85,8 +85,8 @@ ProTips
  - keymaps file is extensive and well commented
  - to install a plugin, do git submodule init <git path> bundle/<plugin-name>
  - to delete a plugin, do the following:
-   - git rm --cached bundle/<plugin name>
+   - git rm --cached bundle/plugin
    - remove the plugin from .gitmodules
    - check for any mentions of it in plugin-config.vim
-   - rm -rf bundle/<plugin name>
+   - rm -rf bundle/plugin
    - commit to git
