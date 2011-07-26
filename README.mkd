@@ -26,49 +26,29 @@ My .vim folder
 currently using:
 
 
- - abolish
  - ack.vim
- - align
- - bufexplorer
- - camel-case-motion
  - command-t
- - conque
  - cucumber
  - delimit-mate
- - endwise
  - fugitive
- - ghetto-todo
  - gist-vim
  - git
  - haml
- - indent_object
  - indexed-search
  - javascript
  - markdown
- - nerdcommenter
  - nerdtree
  - obvious-mode
- - ragtag
  - rails
  - repeat
  - rspec
- - searchfold
  - snipmate
  - solarized
- - speed-dating
  - supertab
  - surround
- - syntastic
  - taglist
- - task-list
  - textile
- - unimpaired
  - various-themes
- - vim-coffee-script
- - vimproc
- - vimshell
- - vis-incr
- - yankring
  - zoomwin
 
 plus a very heavily customized vim. 
@@ -77,7 +57,7 @@ Install
 -------
 
  - clone repository into .vim
- - run rake init setup:plugins from .vim folder
+ - run rake init plugin:setup from .vim folder
  - win
 
 Directory Structure
@@ -104,4 +84,9 @@ ProTips
 
  - keymaps file is extensive and well commented
  - to install a plugin, do git submodule init <git path> bundle/<plugin-name>
- - to delete a plugin, just remove it from the bundle directory, and check for any mentions of it in plugin-config.vim
+ - to delete a plugin, do the following:
+   - git rm --cached bundle/<plugin name>
+   - remove the plugin from .gitmodules
+   - check for any mentions of it in plugin-config.vim
+   - rm -rf bundle/<plugin name>
+   - commit to git
