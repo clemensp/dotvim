@@ -32,6 +32,8 @@ set foldlevelstart=99               " turn off default folding
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
 
+let g:solarized_termcolors=256
+set t_Co=16
 set background=dark
 colorscheme solarized               " color
 

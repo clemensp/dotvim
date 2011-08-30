@@ -163,3 +163,9 @@
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = git://github.com/vim-scripts/tComment.git
+[submodule "bundle/testerical"]
+	path = bundle/testerical
+	url = git://github.com/travisjeffery/testerical.git
+[submodule "bundle/greplace"]
+	path = bundle/greplace
+	url = git://github.com/vim-scripts/greplace.vim.git
