@@ -17,9 +17,6 @@ autocmd BufReadPost fugitive://*
 nmap <C-F5> :!ctags --extra=+f -R *<CR><CR>
 nmap <C-\> :tnext<CR>
 
-" ,, to toggle 'zooming' a split
-nmap <Leader><Leader> :ZoomWin<CR>
-
 " ,n for NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 nmap <Leader>n :NERDTreeToggle<CR>
