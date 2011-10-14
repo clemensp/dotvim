@@ -10,6 +10,9 @@ namespace :plugin do
         sh "rvm system ruby extconf.rb"
       end
       sh "make clean && make"
+
+      # the presence of this file will enable the rest of the vimrc
+      sh 'touch .plugins_installed'
     end
   end
 end
