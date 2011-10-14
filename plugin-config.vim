@@ -31,3 +31,9 @@ map <Leader>f :CommandTFlush<CR>
 "syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
+
+" Testerical
+
+" jump-x2
+nmap <left> <Plug>(jump-x2-to-previous)
+nmap <right> <Plug>(jump-x2-to-next)

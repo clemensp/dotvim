@@ -1,9 +1,8 @@
-" enable full vim mode
 set nocompatible
+filetype off
 
-"pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" vundle
+source ~/.vim/vundles.vim
 
 " configure vim settings
 source ~/.vim/settings.vim
