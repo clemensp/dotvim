@@ -34,3 +34,7 @@ let g:syntastic_quiet_warnings=1
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
+
+" Unite
+map <Leader>s :Unite file<CR>
+map <Leader>b :Unite buffer<CR>
