@@ -11,9 +11,6 @@ map <F12> :silent execute "!ruby % &> /tmp/vim.log &" <cr>
 " Hit escape to clear a search
 :nnoremap <esc> :noh<return><esc>
 
-"toggle taglist
-map <F4> :TlistToggle<cr>
-
 "reload ctags
 nmap <F8> :!ctags -R .<cr>
 

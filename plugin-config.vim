@@ -12,11 +12,6 @@ autocmd BufReadPost fugitive://*
   \   nnoremap <buffer> .. :edit %:h<CR> |
   \ endif
 
-
-" CTags
-nmap <C-F5> :!ctags --extra=+f -R *<CR><CR>
-nmap <C-\> :tnext<CR>
-
 " ,n for NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 nmap <Leader>n :NERDTreeToggle<CR>
@@ -30,11 +25,16 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
 " Testerical
+let g:testerical_cmd_test = "bundle exec ruby %p"
+let g:testerical_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
 
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
 
 " Unite
-map <Leader>s :Unite file<CR>
-map <Leader>b :Unite buffer<CR>
+nmap <Leader>s :Unite file<CR>
+nmap <Leader>b :Unite buffer<CR>
+
+"toggle taglist
+map <F4> :TlistToggle<cr>
