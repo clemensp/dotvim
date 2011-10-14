@@ -1,16 +1,7 @@
 namespace :plugin do
-
-  # rake plugin:add[foo,git@github.com:foo.git]
-  task :add, :name, :git do |t, args|
-    sh "git submodule add #{args[:git]} bundle/#{args[:name]}"
-    sh "git submodule init"
-    sh "git submodule update"
-    puts "\nsuccessfully installed #{args[:name]}"
-  end
-
   task :setup do
     # command_t
-    Dir.chdir "bundle/command-t/ruby/command-t" do
+    Dir.chdir "bundle/Command-T/ruby/command-t" do
       if File.exists?("/usr/bin/ruby1.8") # prefer 1.8 on *.deb systems
         sh "/usr/bin/ruby1.8 extconf.rb"
       elsif File.exists?("/usr/bin/ruby") # prefer system rubies
@@ -25,7 +16,9 @@ end
 
 
 task :init do
-  sh 'git submodule init && git submodule update'
+  sh 'mkdir bundle'
+  sh 'git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle'
   sh 'mkdir backup'
-  sh 'ln -s vimrc ../.vimrc'
+  sh 'mkdir bin'
+  sh 'ln -sf $HOME/.vim/vimrc $HOME/.vimrc'
 end
