@@ -1,4 +1,4 @@
-" fugitive
+:runtime macros/matchit.vim
 
 "spell check when writing commit logs
 autocmd filetype svn,*commit* setlocal spell
