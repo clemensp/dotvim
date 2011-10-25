@@ -20,53 +20,19 @@
 
 
 
-My .vim folder
-==============
-
-currently using:
-
-
- - ack.vim
- - command-t
- - cucumber
- - delimit-mate
- - fugitive
- - gist-vim
- - git
- - haml
- - indexed-search
- - javascript
- - markdown
- - nerdtree
- - obvious-mode
- - rails
- - repeat
- - rspec
- - snipmate
- - solarized
- - supertab
- - surround
- - taglist
- - textile
- - various-themes
- - zoomwin
-
-plus a very heavily customized vim. 
-
 Install
 -------
 
  - clone repository into .vim
- - run rake init plugin:setup from .vim folder
- - win
+ - cd ~/.vim
+ - rake init plugin:setup
 
 Directory Structure
 -------------------
 
  - *after*(/plugin/keymaps.vim): All custom key maps are in here, so that they get priority over plugins
- - *autoload*: pathogen (plugin management system) is installed here
  - *backup*: location for all vim temp files
- - *bundle*: All plugins are installed here as git submodules
+ - *bundle*: All plugins are installed here by Vundle
 
 vimrc
 -----
@@ -83,10 +49,3 @@ ProTips
 -------
 
  - keymaps file is extensive and well commented
- - to install a plugin, do git submodule init <git path> bundle/<plugin-name>
- - to delete a plugin, do the following:
-   - git rm --cached bundle/plugin
-   - remove the plugin from .gitmodules
-   - check for any mentions of it in plugin-config.vim
-   - rm -rf bundle/plugin
-   - commit to git
