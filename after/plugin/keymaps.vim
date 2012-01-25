@@ -5,20 +5,11 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
-"run test
-map <F12> :silent execute "!ruby % &> /tmp/vim.log &" <cr>
-
-" Hit escape to clear a search
-:nnoremap <esc> :noh<return><esc>
-
 "reload ctags
 nmap <F8> :!ctags -R .<cr>
 
-"turn off search highlighting
-nnoremap <esc> :noh<return><esc>
-
-"duplicate line
-nmap <silent> <c-d> mr0Dpyyp`r
-
+" "duplicate line
+" nmap <silent> <c-d> mr0Dpyyp`r
+" 
 " reclaiming some plugin mappings
 vnoremap <esc> <esc>
