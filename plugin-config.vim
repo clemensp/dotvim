@@ -27,10 +27,11 @@ let g:syntastic_quiet_warnings=1
 " Testerical
 let g:testerical_cmd_test = "bundle exec ruby %p"
 let g:testerical_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
+let g:testerical_in_spork = 1
 
 " Turbux
-nmap <leader>rT <Plug>SendTestToTmux
-nmap <leader>rt <Plug>SendFocusedTestToTmux
+"nmap <leader>rT <Plug>SendTestToTmux
+"nmap <leader>rt <Plug>SendFocusedTestToTmux
 
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)

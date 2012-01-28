@@ -1,4 +1,5 @@
 set nocompatible
+set term=builtin_ansi
 filetype off
 
 " vundle

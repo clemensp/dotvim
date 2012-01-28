@@ -18,7 +18,7 @@ set list listchars=tab:\ \ ,trail:· " show leading and trailings spaces/tabs
 set encoding=utf-8                  " default encoding to utf-8
 set number                          " line numbers
 set ruler                           " cursor position in modeline
-syntax on                           " syntax highlighting
+syntax enable                           " syntax highlighting
 set novisualbell                    " turn off blinking
 set history=1000                    " lots of history
 set linebreak                       " wrap at word
@@ -32,9 +32,9 @@ set foldlevelstart=99               " turn off default folding
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
 
-let g:solarized_termcolors=256
-set t_Co=16
 set background=dark
+set t_Co=16
+let g:solarized_termcolors=256
 colorscheme solarized               " color
 
 if has("gui_running")
@@ -45,8 +45,8 @@ if has("gui_running")
   elseif has("gui_macvim")
     set guifont=Menlo:h14
   endif
-endif
 
-" this is to drop all scrollbars sort of a hacky way to do it
-set guioptions+=LlRrb
-set guioptions-=LlRrb
+  " this is to drop all scrollbars sort of a hacky way to do it
+  set guioptions+=LlRrb
+  set guioptions-=LlRrb
+endif
