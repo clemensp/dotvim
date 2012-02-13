@@ -8,6 +8,10 @@ nnoremap gj j
 "reload ctags
 nmap <F8> :!ctags -R .<cr>
 
+" Tabular
+nmap <Leader>a :Tab/\|<CR>
+vmap <Leader>a :Tab/\|<CR>
+
 " "duplicate line
 " nmap <silent> <c-d> mr0Dpyyp`r
 " 

@@ -3,6 +3,7 @@ call vundle#rc()
 
 Bundle 'mileszs/ack.vim'
 Bundle 'gmarik/vundle'
+Bundle 'godlygeek/tabular'
 Bundle 'wincent/Command-T'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'timcharper/textile.vim'
