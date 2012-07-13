@@ -17,7 +17,11 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 nmap <Leader>n :NERDTreeToggle<CR>
 
 " Command-t
-let g:CommandTMaxHeight=20
+"let g:CommandTMaxHeight=20
+"map <Leader>f :CommandTFlush<CR>
+
+" CtrlP
+map <Leader>t :CtrlP<CR>
 map <Leader>f :CommandTFlush<CR>
 
 "syntastic
