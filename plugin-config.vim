@@ -29,6 +29,7 @@ map <Leader>t :AsyncFinder<CR>
 let g:asyncfinder_include_buffers="0"
 let g:asyncfinder_initial_pattern="**"
 let g:asyncfinder_match_camel_case="1"
+let g:asyncfinder_ignore_dirs="['*.AppleDouble*','*.DS_Store*','*.git*','*.hg*','*.bzr*','*.jhw-cache*']"
 
 "syntastic
 let g:syntastic_enable_signs=1
