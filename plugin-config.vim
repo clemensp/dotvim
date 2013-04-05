@@ -32,8 +32,8 @@ let g:asyncfinder_match_camel_case="1"
 let g:asyncfinder_ignore_dirs="['*.AppleDouble*','*.DS_Store*','*.git*','*.hg*','*.bzr*','*.jhw-cache*']"
 
 "syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+" let g:syntastic_enable_signs=1
+" let g:syntastic_quiet_warnings=1
 
 " Testerical
 " let g:testerical_cmd_test = "bundle exec ruby %p"
