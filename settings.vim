@@ -33,10 +33,11 @@ set ttymouse=xterm
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
 
-set background=light
-set t_Co=16
-let g:solarized_termcolors=256
-colorscheme solarized               " color
+" set background=light
+" set t_Co=16
+" let g:solarized_termcolors=256
+" colorscheme solarized               " color
+colorscheme jellybeans
 
 if has("gui_running")
   if has("gui_gtk2")

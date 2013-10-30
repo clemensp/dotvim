@@ -2,3 +2,4 @@ backup/*
 .netrwhist
 bundle
 .plugins_installed
+.cache
