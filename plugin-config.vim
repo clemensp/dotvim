@@ -34,6 +34,7 @@ nmap <Leader>n :NERDTreeToggle<CR>
 "syntastic
 " let g:syntastic_enable_signs=1
 " let g:syntastic_quiet_warnings=1
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"nu-"]
 
 " Testerical
 " let g:testerical_cmd_test = "bundle exec ruby %p"
@@ -63,7 +64,7 @@ let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ig
 let g:unite_data_directory=expand("~/.vim/.cache/unite")
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
-let g:unite_source_rec_max_cache_files=20000
+let g:unite_source_rec_max_cache_files=50000
 let g:unite_prompt='» '
 
 " Shorten the default update date of 500ms
