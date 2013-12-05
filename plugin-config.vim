@@ -18,6 +18,7 @@ nmap <Leader>n :NERDTreeToggle<CR>
 
 " Command-t
 let g:CommandTMaxHeight=20
+let g:CommandTMaxFiles=50000
 map <Leader>f :CommandTFlush<CR>
 
 " CtrlP
