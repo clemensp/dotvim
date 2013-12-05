@@ -17,12 +17,16 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 nmap <Leader>n :NERDTreeToggle<CR>
 
 " Command-t
-"let g:CommandTMaxHeight=20
-"map <Leader>f :CommandTFlush<CR>
+let g:CommandTMaxHeight=20
+map <Leader>f :CommandTFlush<CR>
 
 " CtrlP
 " map <Leader>t :CtrlP<CR>
 " map <Leader>f :CommandTFlush<CR>
+" 
+" let g:ctrlp_prompt_mappings = {
+"     \ 'PrtClearCache()':      ['<c-a>']
+"     \ }
 
 " asyncfinder
 " map <Leader>t :AsyncFinder<CR>
@@ -50,33 +54,29 @@ nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
 
 " Unite
-nmap <Leader>t :Unite file_rec/async<CR>
-nmap <Leader>s :Unite grep:.<CR>
-nmap <Leader>h :Unite history/yank<CR>
-
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#filters#sorter_default#use(['sorter_rank'])
-call unite#set_profile('files', 'smartcase', 1)
-call unite#custom#source('line,outline','matchers','matcher_fuzzy')
-
-let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
-
-let g:unite_data_directory='~/.vim/.cache/unite'
-let g:unite_enable_start_insert=1
-let g:unite_source_history_yank_enable=1
-let g:unite_source_rec_max_cache_files=50000
-let g:unite_prompt='» '
-
-let g:unite_source_grep_command='ag'
-let g:unite_source_grep_default_opts='--noheading --nocolor -S -C4'
-let g:unite_source_grep_recursive_opt=''
+" nmap <Leader>t :Unite file_rec/async<CR>
+" nmap <Leader>s :Unite grep:.<CR>
+" nmap <Leader>h :Unite history/yank<CR>
+" 
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
+" call unite#filters#sorter_default#use(['sorter_rank'])
+" call unite#set_profile('files', 'smartcase', 1)
+" call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+" 
+" let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
+" 
+" let g:unite_data_directory='~/.vim/.cache/unite'
+" let g:unite_enable_start_insert=1
+" let g:unite_source_history_yank_enable=1
+" let g:unite_source_rec_max_cache_files=50000
+" let g:unite_prompt='» '
+" 
+" let g:unite_source_grep_command='ag'
+" let g:unite_source_grep_default_opts='--noheading --nocolor -S -C4'
+" let g:unite_source_grep_recursive_opt=''
 
 "toggle taglist
 map <F4> :TlistToggle<cr>
-
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtClearCache()':      ['<c-a>']
-    \ }
 
 
 let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/invoicing', 'domain/picking',
