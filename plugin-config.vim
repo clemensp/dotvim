@@ -21,25 +21,12 @@ let g:CommandTMaxHeight=20
 let g:CommandTMaxFiles=50000
 map <Leader>f :CommandTFlush<CR>
 
-" CtrlP
-" map <Leader>t :CtrlP<CR>
-" map <Leader>f :CommandTFlush<CR>
-" 
-" let g:ctrlp_prompt_mappings = {
-"     \ 'PrtClearCache()':      ['<c-a>']
-"     \ }
-
-" asyncfinder
-" map <Leader>t :AsyncFinder<CR>
-" let g:asyncfinder_include_buffers="0"
-" let g:asyncfinder_initial_pattern="**"
-" let g:asyncfinder_match_camel_case="1"
-" let g:asyncfinder_ignore_dirs="['*.AppleDouble*','*.DS_Store*','*.git*','*.hg*','*.bzr*','*.jhw-cache*']"
-
 "syntastic
 " let g:syntastic_enable_signs=1
 " let g:syntastic_quiet_warnings=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"nu-"]
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list = 1
 
 " Testerical
 " let g:testerical_cmd_test = "bundle exec ruby %p"
@@ -53,31 +40,6 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " propr
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
-
-" Unite
-" nmap <Leader>t :Unite file_rec/async<CR>
-" nmap <Leader>s :Unite grep:.<CR>
-" nmap <Leader>h :Unite history/yank<CR>
-" 
-" call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" call unite#filters#sorter_default#use(['sorter_rank'])
-" call unite#set_profile('files', 'smartcase', 1)
-" " call unite#custom#source('line,outline','matchers','matcher_fuzzy')
-" 
-" let g:unite_source_rec_async_command='ag --nocolor --nogroup --ignore ".hg" --ignore ".svn" --ignore ".git" --ignore ".bzr" --hidden -g ""'
-" 
-" let g:unite_data_directory=expand("~/.vim/.cache/unite")
-" let g:unite_enable_start_insert=1
-" let g:unite_source_history_yank_enable=1
-" let g:unite_source_rec_max_cache_files=50000
-" let g:unite_prompt='» '
-" 
-" " Shorten the default update date of 500ms
-" let g:unite_update_time = 200
-" 
-" let g:unite_source_grep_command='ag'
-" let g:unite_source_grep_default_opts='--noheading --nocolor -S -C4'
-" let g:unite_source_grep_recursive_opt=''
 
 "toggle taglist
 map <F4> :TlistToggle<cr>
