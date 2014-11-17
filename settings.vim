@@ -30,6 +30,7 @@ set guioptions-=T                   " remove toolbar
 set confirm                         " confirm save when leaving unsaved buffers
 set foldlevelstart=99               " turn off default folding
 set ttymouse=xterm
+set vb
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
 
@@ -54,3 +55,29 @@ if has("gui_running")
   set guioptions+=LlRrb
   set guioptions-=LlRrb
 endif
+
+set wildignore+=node_modules
+
+
+" Requirements:
+" selecta: https://github.com/garybernhardt/selecta
+" ag: https://github.com/ggreer/the_silver_searcher
+ 
+" Run a given vim command on the results of fuzzy selecting from a given shell
+" command. See usage below.
+function! SelectaCommand(choice_command, selecta_args, vim_command)
+  try
+    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
+  catch /Vim:Interrupt/
+    " Swallow the ^C so that the redraw below happens; otherwise there will be
+    " leftovers from selecta on the screen
+    redraw!
+    return
+  endtry
+  redraw!
+  exec a:vim_command . " " . selection
+endfunction
+ 
+" Find all files in all non-dot directories starting in the working directory.
+" Fuzzy select one of those. Open the selected file with :e.
+nnoremap <leader>t :call SelectaCommand("ag --no-numbers --nogroup -l .", "", ":e")<cr>
