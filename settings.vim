@@ -52,3 +52,5 @@ if has("gui_running")
   set guioptions+=LlRrb
   set guioptions-=LlRrb
 endif
+
+set wildignore+=node_modules
