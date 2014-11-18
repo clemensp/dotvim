@@ -50,10 +50,24 @@ nmap <right> <Plug>(jump-x2-to-next)
 map <F4> :TlistToggle<cr>
 
 "vimux
-nnoremap <leader>rl :call VimuxRunLastCommand()<cr>
-nnoremap <leader>tr :call VimuxRunCommand("zeus ruby " . expand('%'))<cr>
-nnoremap <leader>ts :call VimuxRunCommand("zeus rspec " . expand('%'))<cr>
-nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . \| selecta \| xargs vim --remote; tmux last-pane")<cr>
+" nnoremap <leader>rl :call VimuxRunLastCommand()<cr>
+nnoremap <leader>rr :call VimuxRunCommand(g:lastTest)<cr>
+nnoremap <leader>rt :call VimuxRunCommand(GetTestRunCommand("zeus "))<cr>
+nnoremap <leader>rT :call VimuxRunCommand(GetTestRunCommand(""))<cr>
+
+function! GetTestRunCommand(prefix)
+  let g:lastTest=""
+  if match(expand('%:t'), "_spec") > 0
+    let g:lastTest=a:prefix . "rspec " . expand('%')
+  elseif match(expand('%:t'), "_test") > 0
+    let g:lastTest=a:prefix . "ruby " . expand('%')
+  endif
+  return g:lastTest
+endfunction
+
+
+nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . \| selecta \| xargstovim; tmux last-pane")<cr>
+" nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . \| selecta \| xargs vim --remote; tmux last-pane")<cr>
 
 
 let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/invoicing', 'domain/picking',
