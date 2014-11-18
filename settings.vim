@@ -78,4 +78,4 @@ endfunction
  
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>t :call SelectaCommand("ag --no-numbers --nogroup -l .", "", ":e")<cr>
+" nnoremap <leader>t :call SelectaCommand("ag --no-numbers --nogroup -l .", "", ":e")<cr>

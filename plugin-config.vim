@@ -47,6 +47,10 @@ nmap <right> <Plug>(jump-x2-to-next)
 "toggle taglist
 map <F4> :TlistToggle<cr>
 
+"vimux
+" nnoremap <leader>t :call VimuxRunCommand("ag --no-numbers --nogroup -l . | selecta | xargs mvim --remote")<cr>
+nnoremap <leader>t :call VimuxRunCommand("ls")<cr>
+
 
 let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/invoicing', 'domain/picking',
             \'domain/production', 'domain/quickbooks', 'domain/reports', 'domain/true_efficiency', 'domain/icg',
