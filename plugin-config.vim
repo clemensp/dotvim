@@ -14,11 +14,13 @@ autocmd BufReadPost fugitive://*
 
 " ,n for NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>nn :NERDTreeToggle<CR>
+nmap <Leader>nf :NERDTreeFind<CR>
 
 " Command-t
 let g:CommandTMaxHeight=20
-let g:CommandTMaxFiles=50000
+let g:CommandTMaxFiles=100000
+let g:CommandTInputDebounce=200
 map <Leader>f :CommandTFlush<CR>
 
 "syntastic

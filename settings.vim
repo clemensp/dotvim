@@ -34,6 +34,8 @@ set vb
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
 
+set wildignore+=node_modules
+
 " set background=light
 " set t_Co=16
 " let g:solarized_termcolors=256
