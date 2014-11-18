@@ -66,8 +66,7 @@ function! GetTestRunCommand(prefix)
 endfunction
 
 
-nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . \| selecta \| xargstovim; tmux last-pane")<cr>
-" nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . \| selecta \| xargs vim --remote; tmux last-pane")<cr>
+nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . 2>/dev/null \| selecta \| xargstovim; tmux last-pane")<cr>
 
 
 let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/invoicing', 'domain/picking',
