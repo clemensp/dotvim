@@ -33,41 +33,12 @@ let g:syntastic_mode_map={ 'mode': 'active',
       \ 'active_filetypes': [],
       \ 'passive_filetypes': ['html'] }
 
-" Testerical
-" let g:testerical_cmd_test = "bundle exec ruby %p"
-" let g:testerical_cmd_testcase = "bundle exec ruby %p -n '/%c/'"
-" let g:testerical_in_spork = 1
-
-" Turbux
-"nmap <leader>rT <Plug>SendTestToTmux
-"nmap <leader>rt <Plug>SendFocusedTestToTmux
-
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
 
 "toggle taglist
 map <F4> :TlistToggle<cr>
-
-"vimux
-" nnoremap <leader>rl :call VimuxRunLastCommand()<cr>
-nnoremap <leader>rr :call VimuxRunCommand(g:lastTest)<cr>
-nnoremap <leader>rt :call VimuxRunCommand(GetTestRunCommand("zeus "))<cr>
-nnoremap <leader>rT :call VimuxRunCommand(GetTestRunCommand(""))<cr>
-
-function! GetTestRunCommand(prefix)
-  let g:lastTest=""
-  if match(expand('%:t'), "_spec") > 0
-    let g:lastTest=a:prefix . "rspec " . expand('%')
-  elseif match(expand('%:t'), "_test") > 0
-    let g:lastTest=a:prefix . "ruby " . expand('%')
-  endif
-  return g:lastTest
-endfunction
-
-
-nnoremap <leader>t :call VimuxRunCommand("tmux last-pane; ag --no-numbers --nogroup -l . 2>/dev/null \| selecta \| xargstovim; tmux last-pane")<cr>
-
 
 let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/invoicing', 'domain/picking',
             \'domain/production', 'domain/quickbooks', 'domain/reports', 'domain/true_efficiency', 'domain/icg',
