@@ -33,5 +33,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'dag/vim2hs'
+Plugin 'thoughtbot/pick.vim'
 
 call vundle#end()

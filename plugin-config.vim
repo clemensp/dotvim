@@ -51,3 +51,5 @@ autocmd Filetype markdown setlocal nolist
 autocmd Filetype markdown setlocal columns=80
 autocmd Filetype markdown setlocal textwidth=0
 autocmd Filetype markdown setlocal wrapmargin=0
+
+nnoremap <Leader>t :call PickFile()<CR>
