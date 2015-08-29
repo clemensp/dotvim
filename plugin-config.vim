@@ -45,11 +45,4 @@ let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/inv
             \'domain/inventory', 'domain/master', 'domain/planning', 'domain/quality', 'domain/quoting',
             \'domain/shipping_receiving', 'domain/wms']
 
-autocmd Filetype markdown setlocal wrap
-autocmd Filetype markdown setlocal linebreak
-autocmd Filetype markdown setlocal nolist
-autocmd Filetype markdown setlocal columns=80
-autocmd Filetype markdown setlocal textwidth=0
-autocmd Filetype markdown setlocal wrapmargin=0
-
 nnoremap <Leader>t :call PickFile()<CR>
