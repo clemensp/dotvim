@@ -46,3 +46,5 @@ let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/inv
             \'domain/shipping_receiving', 'domain/wms']
 
 nnoremap <Leader>t :call PickFile()<CR>
+
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
