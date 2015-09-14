@@ -34,5 +34,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'dag/vim2hs'
 Plugin 'thoughtbot/pick.vim'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
