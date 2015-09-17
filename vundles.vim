@@ -30,7 +30,8 @@ Plugin 'rking/ag.vim'
 Plugin 'dag/vim2hs'
 Plugin 'thoughtbot/pick.vim'
 Plugin 'mxw/vim-jsx'
-Plugin 'yosiat/oceanic-next-vim'
+" Plugin 'yosiat/oceanic-next-vim'
+Plugin 'mhartington/oceanic-next'
 Plugin 'bling/vim-airline'
 
 call vundle#end()

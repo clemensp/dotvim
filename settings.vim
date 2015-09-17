@@ -40,8 +40,13 @@ set wildignore+=node_modules
 " set t_Co=16
 " let g:solarized_termcolors=256
 " colorscheme solarized               " color
-colorscheme jellybeans
-" colorscheme OceanicNext
+" colorscheme jellybeans
+
+ " Theme
+" syntax enable
+set t_Co=256
+colorscheme OceanicNext
+set background=dark
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -59,33 +64,4 @@ endif
 
 set wildignore+=node_modules
 
-
-" Requirements:
-" selecta: https://github.com/garybernhardt/selecta
-" ag: https://github.com/ggreer/the_silver_searcher
- 
-" Run a given vim command on the results of fuzzy selecting from a given shell
-" command. See usage below.
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    silent let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    " Swallow the ^C so that the redraw below happens; otherwise there will be
-    " leftovers from selecta on the screen
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
- 
-" Find all files in all non-dot directories starting in the working directory.
-" Fuzzy select one of those. Open the selected file with :e.
-" nnoremap <leader>t :call SelectaCommand("ag --no-numbers --nogroup -l .", "", ":e")<cr>
-
-" Find all files in all non-dot directories starting in the working directory.
-" " Fuzzy select one of those. Open the selected file with :e.
-" nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
-"
-"
 " nnoremap <Leader>t :call PickFile()<CR>
