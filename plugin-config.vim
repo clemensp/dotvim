@@ -17,12 +17,6 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 nmap <Leader>nn :NERDTreeToggle<CR>
 nmap <Leader>nf :NERDTreeFind<CR>
 
-" Command-t
-let g:CommandTMaxHeight=20
-let g:CommandTMaxFiles=100000
-let g:CommandTInputDebounce=200
-map <Leader>f :CommandTFlush<CR>
-
 "syntastic
 " let g:syntastic_enable_signs=1
 " let g:syntastic_quiet_warnings=1
@@ -32,6 +26,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_mode_map={ 'mode': 'active',
       \ 'active_filetypes': [],
       \ 'passive_filetypes': ['html'] }
+let g:syntastic_javascript_checkers = ['eslint']
 
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)
