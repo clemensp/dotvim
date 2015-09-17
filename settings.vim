@@ -41,6 +41,7 @@ set wildignore+=node_modules
 " let g:solarized_termcolors=256
 " colorscheme solarized               " color
 colorscheme jellybeans
+" colorscheme OceanicNext
 
 if has("gui_running")
   if has("gui_gtk2")

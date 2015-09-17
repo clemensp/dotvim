@@ -15,4 +15,4 @@ source ~/.vim/plugin-config.vim
 source ~/.vim/autocmds.vim
 
 " set up modeline
-source ~/.vim/statusline.vim
+" source ~/.vim/statusline.vim
