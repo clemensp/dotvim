@@ -27,6 +27,9 @@ let g:syntastic_mode_map={ 'mode': 'active',
       \ 'active_filetypes': [],
       \ 'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_sass_args="--load-path app/assets/stylesheets --ignore='import'"
+let g:syntastic_sass_sass_args="--load-path app/assets/stylesheets --ignore='import'"
+let g:syntastic_css_scss_args="--load-path app/assets/stylesheets --ignore='import'"
 
 " jump-x2
 nmap <left> <Plug>(jump-x2-to-previous)
@@ -46,3 +49,8 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 " vim-airline
 let g:airline_theme='oceanicnext'
+
+
+nmap <Leader>cr :call system("pbcopy", expand("%"))<CR>
+nmap <Leader>cp :call system("pbcopy", expand("%:p"))<CR>
+nmap <Leader>cf :call system("pbcopy", expand("%:t"))<CR>
