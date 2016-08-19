@@ -24,7 +24,7 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " propr
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_mode_map={ 'mode': 'active',
-      \ 'active_filetypes': [],
+      \ 'active_filetypes': ['js'],
       \ 'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_scss_sass_args="--load-path app/assets/stylesheets --ignore='import'"
@@ -44,6 +44,7 @@ let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/inv
             \'domain/shipping_receiving', 'domain/wms']
 
 nnoremap <Leader>t :call PickFile()<CR>
+nnoremap <Leader>b :call PickBuffer()<CR>
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
