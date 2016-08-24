@@ -37,5 +37,6 @@ Plugin 'thoughtbot/pick.vim'
 Plugin 'mhartington/oceanic-next'
 Plugin 'bling/vim-airline'
 Plugin 'AndrewRadev/switch.vim'
+Plugin 'shime/vim-livedown'
 
 call vundle#end()
