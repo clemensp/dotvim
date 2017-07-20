@@ -38,5 +38,9 @@ Plugin 'mhartington/oceanic-next'
 Plugin 'bling/vim-airline'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'shime/vim-livedown'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-projectionist'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'moll/vim-node'
 
 call vundle#end()

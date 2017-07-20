@@ -36,7 +36,7 @@ nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
 
 "toggle taglist
-map <F4> :TlistToggle<cr>
+" map <F4> :TlistToggle<cr>
 
 let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/invoicing', 'domain/picking',
             \'domain/production', 'domain/quickbooks', 'domain/reports', 'domain/true_efficiency', 'domain/icg',
@@ -45,6 +45,7 @@ let g:rails_path_additions = ['domain/common', 'domain/integration', 'domain/inv
 
 nnoremap <Leader>t :call PickFile()<CR>
 nnoremap <Leader>b :call PickBuffer()<CR>
+nnoremap <Leader>] :call PickTag()<CR>
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
