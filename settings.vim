@@ -29,9 +29,13 @@ set guioptions-=m                   " remove menu bar
 set guioptions-=T                   " remove toolbar
 set confirm                         " confirm save when leaving unsaved buffers
 set foldlevelstart=99               " turn off default folding
-set ttymouse=xterm
 set autoread                        " auto-refresh any stale unchanged files
 set vb
+
+if !has('nvim')
+  set ttymouse=xterm
+endif
+
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
 

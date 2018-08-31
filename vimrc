@@ -1,5 +1,9 @@
 set nocompatible
-set term=builtin_ansi
+
+if !has('nvim')
+  set term=builtin_ansi
+endif
+
 filetype off
 
 " vundle
