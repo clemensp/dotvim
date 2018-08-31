@@ -44,6 +44,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 " vim-airline
 let g:airline_theme='oceanicnext'
 
+let g:ycm_server_python_interpreter='/usr/bin/python'
 
 nmap <Leader>cr :call system("pbcopy", expand("%"))<CR>
 nmap <Leader>cp :call system("pbcopy", expand("%:p"))<CR>
