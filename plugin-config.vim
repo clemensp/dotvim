@@ -35,9 +35,9 @@ let g:syntastic_css_scss_args="--load-path app/assets/stylesheets --ignore='impo
 nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
 
-nnoremap <Leader>t :call PickFile()<CR>
-nnoremap <Leader>b :call PickBuffer()<CR>
-nnoremap <Leader>] :call PickTag()<CR>
+nmap <unique> <leader>t <Plug>PickerEdit
+nmap <unique> <leader>b <Plug>PickerBuffer
+nmap <unique> <leader>] <Plug>PickerTag
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
