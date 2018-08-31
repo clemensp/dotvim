@@ -41,18 +41,6 @@ let maplocalleader=',,'             " localleader
 
 set wildignore+=node_modules
 
-" set background=light
-" set t_Co=16
-" let g:solarized_termcolors=256
-" colorscheme solarized               " color
-" colorscheme jellybeans
-
- " Theme
-" syntax enable
-set t_Co=256
-colorscheme OceanicNext
-set background=dark
-
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=DejaVu\ Sans\ Mono\ 10
