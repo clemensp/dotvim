@@ -69,4 +69,3 @@ endif
 
 set wildignore+=node_modules
 
-" nnoremap <Leader>t :call PickFile()<CR>
