@@ -37,5 +37,7 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-projectionist'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'moll/vim-node'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
