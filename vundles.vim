@@ -1,7 +1,7 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'timcharper/textile.vim'
 Plugin 'tomtom/tcomment_vim'
@@ -25,7 +25,6 @@ Plugin 'vim-scripts/taglist.vim'
 Plugin 'vim-scripts/VimClojure'
 Plugin 'nono/vim-handlebars.git'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'rking/ag.vim'
 Plugin 'dag/vim2hs'
@@ -39,5 +38,6 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'moll/vim-node'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'hashivim/vim-terraform'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 call vundle#end()
