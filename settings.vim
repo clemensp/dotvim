@@ -57,3 +57,9 @@ endif
 
 set wildignore+=node_modules
 
+" traverse through lines visually, as opposed to actual lines
+" this helps when traversing very long lines that wrap several times
+noremap <silent> k gk
+noremap <silent> j gj
+noremap <silent> 0 g0
+noremap <silent> $ g$
