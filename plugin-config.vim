@@ -70,9 +70,9 @@ let g:LanguageClient_serverCommands = {
 nmap <left> <Plug>(jump-x2-to-previous)
 nmap <right> <Plug>(jump-x2-to-next)
 
-nmap <unique> <leader>t <Plug>PickerEdit
-nmap <unique> <leader>b <Plug>PickerBuffer
-nmap <unique> <leader>] <Plug>PickerTag
+nmap <unique> <leader>t <Plug>(PickerEdit)
+nmap <unique> <leader>b <Plug>(PickerBuffer)
+nmap <unique> <leader>] <Plug>(PickerTag)
 
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
