@@ -44,5 +44,7 @@ Plugin 'shougo/deoplete.nvim'
 Plugin 'autozimu/languageclient-neovim'
 Plugin 'Einenlum/yaml-revealer'
 Plugin 'google/vim-jsonnet'
+Plugin 'direnv/direnv.vim'
+Plugin 'LnL7/vim-nix'
 
 call vundle#end()
