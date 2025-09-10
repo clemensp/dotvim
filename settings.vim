@@ -31,7 +31,6 @@ set confirm                         " confirm save when leaving unsaved buffers
 set foldlevelstart=99               " turn off default folding
 set autoread                        " auto-refresh any stale unchanged files
 set vb
-" set mouse=a
 
 if !has('nvim')
   set ttymouse=xterm
