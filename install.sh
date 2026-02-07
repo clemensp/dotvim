@@ -4,16 +4,27 @@ set -e
 echo "Setting up vim configuration..."
 
 # Create necessary directories
-mkdir -p bundle
 mkdir -p backup
 mkdir -p bin
 
-# Install Vundle if not already installed
-if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
-  echo "Installing Vundle..."
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Install vim-plug if not already installed
+if [ ! -f "$HOME/.vim/autoload/plug.vim" ]; then
+  echo "Installing vim-plug for vim..."
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 else
-  echo "Vundle already installed"
+  echo "vim-plug already installed for vim"
+fi
+
+# Install vim-plug for neovim if nvim is installed
+if command -v nvim &> /dev/null; then
+  if [ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" ]; then
+    echo "Installing vim-plug for neovim..."
+    curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  else
+    echo "vim-plug already installed for neovim"
+  fi
 fi
 
 # Create symlink to vimrc
@@ -28,6 +39,6 @@ echo ""
 echo "Setup complete!"
 echo ""
 echo "Next steps:"
-echo "  1. Open vim/nvim"
-echo "  2. Run :PluginInstall to install all plugins"
+echo "  1. Open vim/nvim (plugins will auto-install on first launch)"
+echo "  2. Or manually run: vim +PlugInstall +qall"
 echo ""

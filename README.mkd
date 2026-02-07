@@ -31,8 +31,9 @@ git clone https://github.com/clemensp/dotvim.git ~/.vim
 cd ~/.vim
 ./install.sh
 
-# Open vim and install plugins
-vim +PluginInstall +qall
+# Plugins will auto-install on first vim launch
+# Or manually install with:
+vim +PlugInstall +qall
 ```
 
 Directory Structure
@@ -40,7 +41,8 @@ Directory Structure
 
  - *after*(/plugin/keymaps.vim): All custom key maps are in here, so that they get priority over plugins
  - *backup*: location for all vim temp files
- - *bundle*: All plugins are installed here by Vundle
+ - *plugged*: All plugins are installed here by vim-plug
+ - *autoload*: vim-plug installation
 
 vimrc
 -----
