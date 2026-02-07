@@ -1,50 +1,54 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Core
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'timcharper/textile.vim'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-endwise'
+
+" Git
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'mikbe/rspec.vim'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-surround'
+
+" File navigation
 Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'srstevenson/vim-picker'
+
+" Editing
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-endwise'
 Plugin 'travisjeffery/vim-jump-x2'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/yajs.vim'
-" Plugin 'mtscout6/syntastic-local-eslint.vim'
-Plugin 'flowtype/vim-flow'
-Plugin 'vim-scripts/IndexedSearch'
-Plugin 'vim-scripts/Obvious-Mode'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'vim-scripts/VimClojure'
-Plugin 'nono/vim-handlebars.git'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rking/ag.vim'
-Plugin 'dag/vim2hs'
-Plugin 'srstevenson/vim-picker'
-Plugin 'bling/vim-airline'
 Plugin 'AndrewRadev/switch.vim'
-Plugin 'shime/vim-livedown'
+
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-projectionist'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'moll/vim-node'
+Plugin 'mikbe/rspec.vim'
 Plugin 'ngmy/vim-rubocop'
-Plugin 'hashivim/vim-terraform'
-" Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
+" JavaScript
+Plugin 'pangloss/vim-javascript'
+Plugin 'moll/vim-node'
+
+" CSS
+Plugin 'hail2u/vim-css3-syntax'
+
+" Linting & code quality
 Plugin 'dense-analysis/ale'
-Plugin 'shougo/deoplete.nvim'
-Plugin 'autozimu/languageclient-neovim'
+
+" Search
+Plugin 'rking/ag.vim'
+
+" UI
+Plugin 'bling/vim-airline'
+
+" Project management
+Plugin 'tpope/vim-projectionist'
+
+" YAML
 Plugin 'Einenlum/yaml-revealer'
-Plugin 'google/vim-jsonnet'
-Plugin 'direnv/direnv.vim'
-Plugin 'LnL7/vim-nix'
 
 call vundle#end()
