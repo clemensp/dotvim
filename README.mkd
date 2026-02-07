@@ -23,9 +23,17 @@
 Install
 -------
 
- - clone repository into .vim
- - cd ~/.vim
- - rake init plugin:setup
+```bash
+# Clone repository into .vim
+git clone https://github.com/clemensp/dotvim.git ~/.vim
+
+# Run install script
+cd ~/.vim
+./install.sh
+
+# Open vim and install plugins
+vim +PluginInstall +qall
+```
 
 Directory Structure
 -------------------
