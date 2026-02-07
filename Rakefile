@@ -1,7 +1,7 @@
 task :init do
-  sh 'mkdir bundle'
-  sh 'git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle'
-  sh 'mkdir backup'
-  sh 'mkdir bin'
-  sh 'ln -sf $HOME/.vim/vimrc $HOME/.vimrc'
+  mkdir_p 'bundle'
+  mkdir_p 'backup'
+  mkdir_p 'bin'
+  sh 'git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim' unless File.directory?(File.expand_path('~/.vim/bundle/Vundle.vim'))
+  ln_sf File.expand_path('~/.vim/vimrc'), File.expand_path('~/.vimrc')
 end
