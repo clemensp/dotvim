@@ -35,6 +35,31 @@ else
   echo "~/.vimrc symlink already exists"
 fi
 
+# Set up nvim as default vim (if nvim is installed)
+if command -v nvim &> /dev/null; then
+  SHELL_RC=""
+
+  # Detect shell config file
+  if [ -n "$ZSH_VERSION" ]; then
+    SHELL_RC="$HOME/.zshrc"
+  elif [ -n "$BASH_VERSION" ]; then
+    SHELL_RC="$HOME/.bashrc"
+  fi
+
+  if [ -n "$SHELL_RC" ] && [ -f "$SHELL_RC" ]; then
+    if ! grep -q "alias vim.*nvim" "$SHELL_RC"; then
+      echo "" >> "$SHELL_RC"
+      echo "# Use neovim as vim" >> "$SHELL_RC"
+      echo 'export EDITOR="nvim"' >> "$SHELL_RC"
+      echo 'alias vim="nvim"' >> "$SHELL_RC"
+      echo 'alias vi="nvim"' >> "$SHELL_RC"
+      echo "Added vim→nvim aliases to $SHELL_RC"
+    else
+      echo "vim→nvim aliases already configured"
+    fi
+  fi
+fi
+
 echo ""
 echo "Setup complete!"
 echo ""

@@ -36,6 +36,8 @@ cd ~/.vim
 vim +PlugInstall +qall
 ```
 
+**Note:** This configuration is optimized for Neovim. The install script will automatically set up `vim` and `vi` aliases to use `nvim` if it's installed.
+
 Directory Structure
 -------------------
 
