@@ -39,12 +39,15 @@ fi
 if command -v nvim &> /dev/null; then
   SHELL_RC=""
 
-  # Detect shell config file
-  if [ -n "$ZSH_VERSION" ]; then
-    SHELL_RC="$HOME/.zshrc"
-  elif [ -n "$BASH_VERSION" ]; then
-    SHELL_RC="$HOME/.bashrc"
-  fi
+  # Detect shell config file based on user's login shell
+  case "$SHELL" in
+    */zsh)
+      SHELL_RC="$HOME/.zshrc"
+      ;;
+    */bash)
+      SHELL_RC="$HOME/.bashrc"
+      ;;
+  esac
 
   if [ -n "$SHELL_RC" ] && [ -f "$SHELL_RC" ]; then
     if ! grep -q "alias vim.*nvim" "$SHELL_RC"; then
