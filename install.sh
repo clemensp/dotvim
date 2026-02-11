@@ -35,6 +35,17 @@ else
   echo "~/.vimrc symlink already exists"
 fi
 
+# Create nvim init.vim symlink (if nvim is installed)
+if command -v nvim &> /dev/null; then
+  mkdir -p "$HOME/.config/nvim"
+  if [ ! -L "$HOME/.config/nvim/init.vim" ]; then
+    echo "Creating symlink ~/.config/nvim/init.vim -> ~/.vimrc"
+    ln -sf "$HOME/.vimrc" "$HOME/.config/nvim/init.vim"
+  else
+    echo "~/.config/nvim/init.vim symlink already exists"
+  fi
+fi
+
 # Set up nvim as default vim (if nvim is installed)
 if command -v nvim &> /dev/null; then
   SHELL_RC=""
