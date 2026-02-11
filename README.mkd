@@ -31,8 +31,7 @@ git clone https://github.com/clemensp/dotvim.git ~/.vim
 cd ~/.vim
 ./install.sh
 
-# Plugins will auto-install on first vim launch
-# Or manually install with:
+# Install plugins
 vim +PlugInstall +qall
 ```
 
