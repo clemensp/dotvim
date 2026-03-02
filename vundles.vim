@@ -20,6 +20,9 @@ if !exists('g:vscode')
   " Ruby
   Plug 'vim-ruby/vim-ruby'
 
+  " Colorscheme
+  Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
   " Linting & code quality
   Plug 'dense-analysis/ale'
 endif

@@ -20,3 +20,8 @@ source ~/.vim/autocmds.vim
 
 " set up modeline
 " source ~/.vim/statusline.vim
+
+" colorscheme (must be after plugins are loaded)
+if !exists('g:vscode')
+  silent! colorscheme catppuccin_frappe
+endif

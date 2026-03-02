@@ -19,6 +19,9 @@ set encoding=utf-8                  " default encoding to utf-8
 set number                          " line numbers
 set ruler                           " cursor position in modeline
 syntax enable                           " syntax highlighting
+if !exists('g:vscode')
+  set termguicolors                     " enable 24-bit color
+endif
 set novisualbell                    " turn off blinking
 set history=1000                    " lots of history
 set linebreak                       " wrap at word
